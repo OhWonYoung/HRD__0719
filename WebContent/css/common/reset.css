@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: auto;
+}
+ul, ol, li{
+	list-style: none;
+}
+a{
+	color: #222222;
+	text-decoration: none;
+}
+header, footer, section, aside, acticle, nav, main{
+	display: block;
+}

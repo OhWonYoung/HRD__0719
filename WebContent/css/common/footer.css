@@ -1,0 +1,19 @@
+/* footer */
+
+.footer{
+	width: 100%;
+	height: auto;
+	background: #459cbb;
+}
+.footer .inner-footer{
+	width: 100%;
+	height: auto;
+}
+.footer .inner-footer .fcon{
+	width: 100%;
+	height: auto;
+	color: #ffffff;
+	text-align: center;
+	line-height: 50px;
+	padding: 10px 0;
+}
