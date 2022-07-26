@@ -296,4 +296,43 @@ public class BoardDao {
 		return salesList2;
 	}
 	
+	public int loginOk(int custNo, String custName){
+		int login = 0;
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		String query = "";
+		
+		try {
+			conn = DBConnect.getConnection();
+			query = "select count(*) from member_tbl_02 where custNo=? and custName=?";
+			pstm = conn.prepareStatement(query);
+			
+			pstm.setInt(1, custNo);
+			pstm.setString(2, custName);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				login = rs.getInt(1);
+			}
+				
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn!=null)conn.close();
+				if(pstm!=null)pstm.close();
+				if(rs!=null)rs.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {}
+		}
+		
+		
+		return login;
+	}
+	
+	
+	
 }

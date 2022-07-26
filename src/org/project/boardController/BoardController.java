@@ -13,6 +13,8 @@ import org.project.boardCommend.ExcuteCommend;
 import org.project.boardCommend.MemberCustNoMaxCommend;
 import org.project.boardCommend.MemberInsertCommend;
 import org.project.boardCommend.MemberListCommend;
+import org.project.boardCommend.MemberLoginCommend;
+import org.project.boardCommend.MemberLogoutCommend;
 import org.project.boardCommend.MemberSalesCommend;
 import org.project.boardCommend.MemberSalesListCommend;
 import org.project.boardCommend.MemberUpdateCommend;
@@ -67,6 +69,16 @@ public class BoardController extends HttpServlet{
 			url = (String)request.getAttribute("url");
 		}else if(basicURL.equals("memberSalesList")) {
 			commend = new MemberSalesListCommend();
+			commend.excuteQueryCommend(request, response);
+			url = (String)request.getAttribute("url");
+		}else if(basicURL.equals("loginView")) {
+			url = "/login.jsp";
+		}else if(basicURL.equals("loginOk")) {
+			commend = new MemberLoginCommend();
+			commend.excuteQueryCommend(request, response);
+			url = (String)request.getAttribute("url");
+		}else if(basicURL.equals("logoutOk")) {
+			commend = new MemberLogoutCommend();
 			commend.excuteQueryCommend(request, response);
 			url = (String)request.getAttribute("url");
 		}
